@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../static/styles/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nasa</title>
+</head>
+<body>
+    <!--Nav Bar-->
+    <nav>
+        <h1>MY-API</h1>
+        <button onclick="location.reload()" style="padding: 10px;">Refresh</button>
+        <br>
+        <ul>
+            <li id="navli"><a href="/" title="Back to Home?">Home Page</a></li>
+        </ul>
+    </nav>
+    <br>
+    <!--Art themes VVVV-->
+    <section>
+        <h1>Art Theme Generator</h1>
+        <article>
+            <p>Art Theme: {{art_theme.name}}</p>
+            <img src="{{art_theme.img_url}}">
+        </article>
+    </section>
+    <br>
+    <!--Art palletes VVVV-->
+    <section>
+        <h1>Art Palette Generator</h1>
+        <article>
+            <p>{{art_palette}}</p> 
+            <ol>
+                <li id="one" style="background-color: {{art_palette.color1}};">{{art_palette.color1}}</li>
+                <li style="background-color: {{art_palette.color2}};">{{art_palette.color2}}</li>
+                <li style="background-color: {{art_palette.color3}};">{{art_palette.color3}}</li>
+            </ol>
+        </article>
+    </section>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../static/styles/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cats</title>
+</head>
+<body>
+    <!--Nav Bar-->
+    <nav>
+        <h1>Cat-API</h1>
+        <button onclick="location.reload()" style="padding: 10px;">Refresh</button>
+        <br>
+        <ul>
+            <li id="navli"><a href="/" title="back to Home?">Home Page</a></li>
+        </ul>
+    </nav>
+    <br>
+    <!--API test-->
+    <section>
+        <h1>Cat Photo Generator</h1>
+    {% for cat in data %}
+        <article>
+            <img style="width: 400px; border-radius: 10px;" src="{{cat.url}}" alt="cat image">
+            <p>Image ID: {{cat.id}}</p>
+        </article>
+    {% endfor %}
+    </section>
+</body>
+</html>
