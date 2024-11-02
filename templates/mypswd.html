@@ -4,28 +4,25 @@
     <link rel="stylesheet" href="../static/styles/style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cat API</title>
+    <title>My...</title>
 </head>
 <body>
     <!--Nav Bar-->
     <nav>
-        <h1>Cat-API</h1>
-        <button onclick="location.reload()" style="padding: 10px;">Refresh</button>
-        <br>
+        <h1>My API</h1>
         <ul>
             <li id="navli"><a href="/home/Saturday" title="back to Home?">Home Page</a></li>
         </ul>
     </nav>
     <br>
-    <!--API test-->
+    <!--Heads Up-->
     <section>
-        <h1>Cat Photo Generator</h1>
-    {% for cat in data %}
+        <h2>Heads Up!</h2>
+        <p>Enter your name into the website URL in order to access My API page.</p>
         <article>
-            <img style="width: 400px; border-radius: 10px;" src="{{cat.url}}" alt="cat image">
-            <p>Image ID: {{cat.id}}</p>
+            <h3>Example:</h3>
+            <p>http://100.114.3.122:8080/my/your_name</p>
         </article>
-    {% endfor %}
     </section>
 </body>
 </html>

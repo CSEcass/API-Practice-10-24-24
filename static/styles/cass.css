@@ -1,0 +1,50 @@
+body {
+    background-color: white;
+}
+nav {
+    background-color: black;
+    border-radius: 0px;
+    border-style: solid;
+    border-color: grey;
+    border-width: 5px;
+    color: white;
+    text-align: center;
+}
+ul {
+    list-style-type: none;
+    display: inline;
+}
+#navli {
+    background-color: grey;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 5px;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+a:hover {
+    text-decoration: underline;
+    color: white;
+}
+section {
+    background-color: rgb(255, 220, 79);
+    padding: 10px;
+    border-color: rgb(81, 127, 81);
+    border-width: 5px;
+    border-style: solid;
+    border-radius: 10px;
+    overflow: auto;
+    height: 400px;
+}
+article {
+    text-align: center;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 50px;
+    background-color: rgb(234, 181, 4);
+}
+img {
+    width: 400px;
+}
