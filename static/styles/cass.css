@@ -1,5 +1,7 @@
 body {
     background-color: white;
+    color: white;
+    font-family: courier;
 }
 nav {
     background-color: black;
@@ -7,7 +9,6 @@ nav {
     border-style: solid;
     border-color: grey;
     border-width: 5px;
-    color: white;
     text-align: center;
 }
 ul {
@@ -47,4 +48,24 @@ article {
 }
 img {
     width: 400px;
+}
+#art1 {
+    float: left;
+    background-color: black;
+    width: 500px;
+    height: 600px;
+    overflow: auto;
+    padding: 10px;
+}
+#art2 {
+    margin-top: 10px;
+    float: right;
+    background-color: black;
+    width: 500px;
+    height: 600px;
+    overflow: auto;
+    padding: 10px;
+}
+span {
+    text-decoration: line-through;
 }

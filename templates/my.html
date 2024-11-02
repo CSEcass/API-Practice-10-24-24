@@ -13,7 +13,7 @@
         <button onclick="location.reload()" style="padding: 10px;">Refresh</button>
         <br>
         <ul>
-            <li id="navli"><a href="/home/Saturday" title="Back to Home?">Home Page</a></li>
+            <li id="navli"><a href="/home" title="Back to Home?">Home Page</a></li>
         </ul>
     </nav>
     <br>
@@ -38,12 +38,9 @@
             </ol>
             <p>Have a great day,<br><br>
                 {% for character in coloredName %}
-                <span style="background-color: {{coloredName[character]}};">{{character}}</span>
+                <span style="background-color: {{art_palette_iter}};">{{character}}</span>
                 {% endfor %}
                 </p>
-                <p><span style="background-color: {{art_palette.color1}};"> </span>
-                <span style="background-color: {{art_palette.color2}};">{{name}}</span>
-                <span style="background-color: {{art_palette.color3}};"> !</span></p>
         </article>
     </section>
 </body>

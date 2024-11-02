@@ -2,20 +2,22 @@ from flask import Flask, render_template, jsonify
 import requests
 import random
 import json
+import itertools
 
 app = Flask(__name__)
+
 @app.route('/')
 def Startup():
-    return render_template('start.html', )
-@app.route('/<name>/<day>')
-def home_page(name, day):
+    return render_template('start.html')
+
+@app.route('/<name>')
+def home_page(name):
     if name == "home":
-        return render_template('index.html', day=day)
-    elif name == "secret":
-        return "Hi :D, today is " + day
+        return render_template('index.html')
+    elif name == "my":
+        return render_template('mypswd.html')
     else:
-        return "The Page You Are Looking For, Does Not Exist. Today is " + day + "."
-    
+        return "The Page You Are Looking For, Does Not Exist."
 # @app.route('/<num>')
     def num_page(num):
         num = int(num)
@@ -25,7 +27,6 @@ def home_page(name, day):
             return "The number " + str(num) + " is less than 10."
         elif num == 10:
             return "The number " + str(num) + " is equal to 10."
-
 @app.route('/cat')
 def cat_api():
     res = requests.get('https://api.thecatapi.com/v1/images/search?limit=10')
@@ -51,10 +52,6 @@ def art_api():
     print(art_dict)
     return jsonify(art_dict)
 
-@app.route('/my')
-def art_api_request():
-    return render_template('mypswd.html')
-
 @app.route('/my/<name>')
 def art_api_get(name):
     # API VV
@@ -69,16 +66,22 @@ def art_api_get(name):
         {'color1': '#3A0CA3', 'color2': '#4361EE', 'color3': '#4CC9F0'},]
     art_theme = random.choice(art_theme_dict)
     print(art_theme)
-    
     # special page VV
     if name == 'cassidy':
         return render_template('cass.html', name=name)
     # name part VV
-    coloredName = {}
+    art_palette = random.choice(art_palette_dict)
+    print(type(art_palette))
+    art_palette_iter = itertools.cycle(art_palette)
+    coloredName = []
     for i in name:
-        art_palette = random.choice(art_palette_dict)
-        coloredName[i] = art_palette['color' + str(random.randint(1, 3))]
-    print(coloredName)
-    return render_template('my.html', art_theme=art_theme, art_palette=art_palette, name=name, coloredName=coloredName)
+        print("for loop...")
+        coloredName.append(i)
+        print('Colored Name List Test: '+ str(coloredName))
+        for value in art_palette.values():
+            print('Value loop...' + value)
+
+    print("coloredName:" + str(coloredName))
+    return render_template('my.html', art_theme=art_theme, art_palette=art_palette, name=name, coloredName=coloredName, art_palette_iter=art_palette_iter)
 
 app.run(host='0.0.0.0', port=8080)
